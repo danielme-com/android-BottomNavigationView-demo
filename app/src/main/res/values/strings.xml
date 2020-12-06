@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">BottomNavigation Demo</string>
+
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_list">List</string>
+    <string name="bottom_nav_fav">Favourites</string>
+    <string name="bottom_nav_search">Search</string>
+    <string name="bottom_nav_settings">Settings</string>
+</resources>

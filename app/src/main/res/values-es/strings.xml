@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">BottomNavigation Demo</string>
+
+    <string name="bottom_nav_home">Inicio</string>
+    <string name="bottom_nav_list">Lista</string>
+    <string name="bottom_nav_fav">Favoritos</string>
+    <string name="bottom_nav_search">Búsqueda</string>
+    <string name="bottom_nav_settings">Configuración</string>
+
+</resources>
