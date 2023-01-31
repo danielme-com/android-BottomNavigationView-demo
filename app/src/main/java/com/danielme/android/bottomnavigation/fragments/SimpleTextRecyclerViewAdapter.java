@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.danielme.android.bottomnavigation.R;
@@ -21,8 +22,9 @@ class SimpleTextRecyclerViewAdapter extends RecyclerView.Adapter<TextViewHolder>
     this.items = items;
   }
 
+  @NonNull
   @Override
-  public TextViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  public TextViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View view = inflater.inflate(R.layout.row_recycler_view, parent, false);
     return new TextViewHolder(view);
   }

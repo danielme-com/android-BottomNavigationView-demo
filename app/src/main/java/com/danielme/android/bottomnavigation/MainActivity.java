@@ -1,6 +1,7 @@
 package com.danielme.android.bottomnavigation;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -37,28 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupBottomMenu(Bundle savedInstanceState) {
     bottomNavigationView = findViewById(R.id.bottom_navigation);
-    bottomNavigationView.setOnItemSelectedListener(item -> {
-      switch (item.getItemId()) {
-        case R.id.page_home:
-          showFragment(PageFragment.newInstance(R.drawable.baseline_home_black_48));
-          break;
-        case R.id.page_list:
-          showFragment(new RecyclerViewFragment());
-          break;
-        case R.id.page_fav:
-          showFragment(PageFragment.newInstance(R.drawable.baseline_favorite_black_48));
-          break;
-        case R.id.page_search:
-          showFragment(PageFragment.newInstance(R.drawable.baseline_search_black_48));
-          break;
-        case R.id.page_settings:
-          showFragment(PageFragment.newInstance(R.drawable.baseline_app_settings_alt_black_48));
-          break;
-        default:
-          throw new IllegalArgumentException("item not implemented : " + item.getItemId());
-      }
-      return true;
-    });
+    bottomNavigationView.setOnItemSelectedListener(this::onItemSelectedListener);
 
     //setear aquí para que el listener muestre el fragment inicial al cargarse la pantalla
     if (savedInstanceState == null) {
@@ -71,6 +51,28 @@ public class MainActivity extends AppCompatActivity {
     bottomNavigationView.getOrCreateBadge(R.id.page_settings).setVisible(true);
   }
 
+  private boolean onItemSelectedListener(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.page_home:
+        showFragment(PageFragment.newInstance(R.drawable.baseline_home_black_48));
+        return true;
+      case R.id.page_list:
+        showFragment(new RecyclerViewFragment());
+        return true;
+      case R.id.page_fav:
+        showFragment(PageFragment.newInstance(R.drawable.baseline_favorite_black_48));
+        return true;
+      case R.id.page_search:
+        showFragment(PageFragment.newInstance(R.drawable.baseline_search_black_48));
+        return true;
+      case R.id.page_settings:
+        showFragment(PageFragment.newInstance(R.drawable.baseline_app_settings_alt_black_48));
+        return true;
+      default:
+        throw new IllegalArgumentException("item not implemented : " + item.getItemId());
+    }
+  }
+
   private void showFragment(Fragment frg) {
     getSupportFragmentManager()
             .beginTransaction()
@@ -78,6 +80,5 @@ public class MainActivity extends AppCompatActivity {
             .replace(R.id.container, frg)
             .commit();
   }
-
 
 }
