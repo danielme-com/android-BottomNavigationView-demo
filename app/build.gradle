@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.danielme.android.bottomnavigation"
-        minSdkVersion 19
-        targetSdkVersion 30
+        minSdkVersion 26
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
     }
     buildTypes {
         release {
