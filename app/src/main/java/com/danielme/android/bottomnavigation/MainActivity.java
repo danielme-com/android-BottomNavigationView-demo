@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupBottomMenu(Bundle savedInstanceState) {
     bottomNavigationView = findViewById(R.id.bottom_navigation);
-    bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+    bottomNavigationView.setOnItemSelectedListener(item -> {
       switch (item.getItemId()) {
         case R.id.page_home:
           showFragment(PageFragment.newInstance(R.drawable.baseline_home_black_48));
