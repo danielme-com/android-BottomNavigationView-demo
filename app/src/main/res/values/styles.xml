@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
@@ -9,7 +9,7 @@
     <style name="AppTheme.ToolbarMain" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:elevation" tools:targetApi="lollipop">@dimen/toolbar_elevation</item>
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
     </style>
 
 </resources>
