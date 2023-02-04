@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/page_home">
+
+    <fragment
+        android:id="@+id/page_home"
+        android:name="com.danielme.android.bottomnavigation.fragments.PageFragment"
+        android:label="@string/bottom_nav_home"
+        tools:layout="@layout/fragment_page">
+        <argument
+            android:name="ARG_ICON"
+            android:defaultValue="@drawable/baseline_home_black_48"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/page_list"
+        android:name="com.danielme.android.bottomnavigation.fragments.RecyclerViewFragment"
+        android:label="@string/bottom_nav_list"
+        tools:layout="@layout/fragment_recycler_view" />
+
+    <fragment
+        android:id="@+id/page_fav"
+        android:name="com.danielme.android.bottomnavigation.fragments.PageFragment"
+        android:label="@string/bottom_nav_fav"
+        tools:layout="@layout/fragment_page">
+        <argument
+            android:name="ARG_ICON"
+            android:defaultValue="@drawable/baseline_favorite_black_48"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/page_search"
+        android:name="com.danielme.android.bottomnavigation.fragments.PageFragment"
+        android:label="@string/bottom_nav_search"
+        tools:layout="@layout/fragment_page">
+        <argument
+            android:name="ARG_ICON"
+            android:defaultValue="@drawable/baseline_search_black_48"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/page_settings"
+        android:name="com.danielme.android.bottomnavigation.fragments.PageFragment"
+        android:label="@string/bottom_nav_settings"
+        tools:layout="@layout/fragment_page">
+        <argument
+            android:name="ARG_ICON"
+            android:defaultValue="@drawable/baseline_app_settings_alt_black_48"
+            app:argType="reference" />
+    </fragment>
+
+</navigation>
