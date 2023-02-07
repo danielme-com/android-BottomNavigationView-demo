@@ -1,5 +1,4 @@
 <resources>
-    <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="standard_margin">16dp</dimen>
     <dimen name="list_height">42dp</dimen>
 </resources>
