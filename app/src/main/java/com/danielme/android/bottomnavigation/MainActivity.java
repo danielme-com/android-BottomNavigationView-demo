@@ -60,10 +60,11 @@ public class MainActivity extends AppCompatActivity {
     bottomNavigationView = findViewById(R.id.bottom_navigation);
     bottomNavigationView.setOnItemSelectedListener(this::onItemSelectedListener);
 
-    //setear aquí para que el listener muestre el fragment inicial al cargarse la pantalla
     if (savedInstanceState == null) {
+      //displays the initial fragment when app starts
       bottomNavigationView.setSelectedItemId(R.id.page_home);
     } else {
+      //restores the item selected before rotating
       bottomNavigationView.setSelectedItemId(savedInstanceState.getInt(SELECTION));
     }
 
@@ -73,23 +74,27 @@ public class MainActivity extends AppCompatActivity {
 
   private boolean onItemSelectedListener(MenuItem item) {
     switch (item.getItemId()) {
-      case R.id.page_home:
+      case R.id.page_home -> {
         showPageFragment(R.drawable.baseline_home_black_48, R.string.bottom_nav_home);
         return true;
-      case R.id.page_list:
+      }
+      case R.id.page_list -> {
         showFragment(new RecyclerViewFragment(), R.string.bottom_nav_list);
         return true;
-      case R.id.page_fav:
+      }
+      case R.id.page_fav -> {
         showPageFragment(R.drawable.baseline_favorite_black_48, R.string.bottom_nav_fav);
         return true;
-      case R.id.page_search:
+      }
+      case R.id.page_search -> {
         showPageFragment(R.drawable.baseline_search_black_48, R.string.bottom_nav_search);
         return true;
-      case R.id.page_settings:
+      }
+      case R.id.page_settings -> {
         showPageFragment(R.drawable.baseline_app_settings_alt_black_48, R.string.bottom_nav_settings);
         return true;
-      default:
-        throw new IllegalArgumentException("item not implemented : " + item.getItemId());
+      }
+      default -> throw new IllegalArgumentException("item not implemented : " + item.getItemId());
     }
   }
 

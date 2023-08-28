@@ -29,7 +29,8 @@ public class PageFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
           Bundle savedInstanceState) {
     View layout = inflater.inflate(R.layout.fragment_page, container, false);
-    layout.findViewById(R.id.imageView).setBackgroundResource(getArguments().getInt(ARG_ICON));
+    int icon = getArguments().getInt(ARG_ICON);
+    layout.findViewById(R.id.imageView).setBackgroundResource(icon);
     return layout;
   }
 
